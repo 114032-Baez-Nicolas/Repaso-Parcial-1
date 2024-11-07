@@ -1,0 +1,77 @@
+<form [formGroup]="budgetForm" (ngSubmit)="save()" class="p-4 border rounded bg-light">
+  <div class="mb-3">
+    <label for="date" class="form-label">Fecha:</label>
+    <input id="date" type="date" formControlName="date" class="form-control">
+    <div *ngIf="budgetForm.get('date')?.invalid && budgetForm.get('date')?.touched" class="text-danger">
+      Fecha requerida y no puede ser mayor a hoy.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="client" class="form-label">Cliente:</label>
+    <input id="client" type="text" formControlName="client" class="form-control">
+    <div *ngIf="budgetForm.get('client')?.invalid && budgetForm.get('client')?.touched" class="text-danger">
+      Cliente requerido.
+    </div>
+  </div>
+
+  <div formArrayName="modules" class="mb-3">
+    <div *ngFor="let module of modules.controls; let i = index" [formGroupName]="i"
+      class="border rounded p-3 mb-3 bg-white">
+      <h5>Módulo {{ i + 1 }}</h5>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Tipo:</label>
+          <select formControlName="type" required class="form-select">
+            <option value="">Seleccionar tipo</option>
+            <option *ngFor="let type of moduleTypes" [value]="type.name">{{ type.name }}</option>
+          </select>
+          <div *ngIf="module.get('type')?.invalid && module.get('type')?.touched" class="text-danger">
+            Tipo de módulo requerido.
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Precio:</label>
+          <input formControlName="price" class="form-control">
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Lugares:</label>
+          <input formControlName="slots" class="form-control">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Ambiente:</label>
+          <input formControlName="zone" required class="form-control">
+          <div *ngIf="module.get('zone')?.invalid && module.get('zone')?.touched" class="text-danger">
+            Ambiente requerido.
+          </div>
+        </div>
+
+        <div class="col-md-12 text-end">
+          <button type="button" (click)="removeModule(i)" *ngIf="modules.length > 1" class="btn btn-danger btn-sm">
+            Eliminar módulo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-start mb-3">
+    <button type="button" (click)="addModule()" [disabled]="modules.length >= 5" class="btn btn-secondary">
+      + Módulo
+    </button>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <button type="submit" [disabled]="!budgetForm.valid || modules.length < 2" class="btn btn-primary">
+      Guardar
+    </button>
+
+    <button type="button" (click)="goBack()" class="btn btn-outline-secondary">
+      Volver
+    </button>
+  </div>
+</form>

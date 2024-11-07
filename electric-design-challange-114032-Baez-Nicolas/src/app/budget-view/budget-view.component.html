@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div *ngIf="budget" class="card">
+    <div class="card-body">
+      <h5 class="card-title">Presupuesto {{ budget.client }} #{{ budget.id }}</h5>
+
+      <div>
+        <h6>Módulos</h6>
+        <ul class="list-unstyled">
+          <li *ngFor="let module of budget.modules">
+            {{ module.zone }}: {{ module.moduleTypeId }} - Slots: {{ module.slots }} - ${{ module.price }}
+          </li>
+        </ul>
+      </div>
+
+      <p>Total de la cotización: {{ calculateTotal() | currency }}</p>
+      <p>Cajas necesarias: {{ calculateRequiredBoxes() }}</p>
+      
+    </div>
+    <div class="card-footer">
+      <a href="#/listado" class="btn btn-link">Volver</a>
+    </div>
+  </div>
+</div>

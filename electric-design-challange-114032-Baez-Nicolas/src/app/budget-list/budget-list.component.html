@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Módulos</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let budget of budgets">
+        <td>{{ budget.id }}</td>
+        <td>{{ budget.client }}</td>
+        <td>{{ budget.date | date }}</td>
+        <td>{{ getTotalModules(budget) }}</td>
+        <td>
+          <button class="btn btn-outline-secondary btn-sm" [routerLink]="['/budget-view', budget.id]">
+            <i class="bi bi-eye"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

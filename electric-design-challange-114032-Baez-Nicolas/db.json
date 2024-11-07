@@ -1,0 +1,155 @@
+{
+  "budgets": [
+    {
+      "id": "7f48",
+      "date": "2024-01-30",
+      "client": "hola",
+      "modules": [
+        {
+          "type": "Toma corriente triple",
+          "price": "1700",
+          "slots": "3",
+          "zone": "si"
+        },
+        {
+          "type": "Interruptor simple",
+          "price": "1000",
+          "slots": "1",
+          "zone": "a"
+        }
+      ]
+    },
+    {
+      "id": "558b",
+      "date": "2024-10-29",
+      "client": "hola",
+      "modules": [
+        {
+          "type": "Interruptor doble",
+          "price": "2000",
+          "slots": "2",
+          "zone": "aaaaa"
+        },
+        {
+          "type": "USB",
+          "price": "5000",
+          "slots": "1",
+          "zone": "sada"
+        }
+      ]
+    },
+    {
+      "id": "f9a9",
+      "date": "2024-11-05",
+      "client": "aa",
+      "modules": [
+        {
+          "type": "Interruptor simple",
+          "price": "1000",
+          "slots": "1",
+          "zone": "xd"
+        },
+        {
+          "type": "Interruptor simple",
+          "price": "1000",
+          "slots": "1",
+          "zone": "a"
+        }
+      ]
+    },
+    {
+      "id": "694c",
+      "date": "2024-10-27",
+      "client": "NICO",
+      "modules": [
+        {
+          "type": "Toma corriente doble",
+          "price": "3000",
+          "slots": "2",
+          "zone": "xd"
+        },
+        {
+          "type": "Toma corriente simple",
+          "price": "1500",
+          "slots": "1",
+          "zone": "a"
+        },
+        {
+          "type": "Toma corriente doble",
+          "price": "3000",
+          "slots": "2",
+          "zone": "s"
+        },
+        {
+          "type": "Toma corriente simple",
+          "price": "1500",
+          "slots": "1",
+          "zone": "s"
+        },
+        {
+          "type": "Toma corriente doble",
+          "price": "3000",
+          "slots": "2",
+          "zone": "a"
+        }
+      ]
+    },
+    {
+      "id": "4915",
+      "date": "2024-11-05",
+      "client": "Si",
+      "modules": [
+        {
+          "type": "USB",
+          "price": "5000",
+          "slots": "1",
+          "zone": "OG SEASON"
+        },
+        {
+          "type": "Toma corriente triple",
+          "price": "1700",
+          "slots": "3",
+          "zone": "REMIX SEASON"
+        }
+      ]
+    }
+  ],
+  "module-types": [
+    {
+      "id": "1",
+      "name": "Interruptor simple",
+      "slots": 1,
+      "price": 1000
+    },
+    {
+      "id": "2",
+      "name": "Interruptor doble",
+      "slots": 2,
+      "price": 2000
+    },
+    {
+      "id": "3",
+      "name": "Toma corriente simple",
+      "slots": 1,
+      "price": 1500
+    },
+    {
+      "id": "4",
+      "name": "Toma corriente doble",
+      "slots": 2,
+      "price": 3000
+    },
+    {
+      "id": "5",
+      "name": "Toma corriente triple",
+      "slots": 3,
+      "price": 1700
+    },
+    {
+      "id": "6",
+      "name": "USB",
+      "slots": 1,
+      "price": 5000
+    }
+  ]
+}
